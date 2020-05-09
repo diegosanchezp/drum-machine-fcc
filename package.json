@@ -8,18 +8,19 @@
     "format": "npm run format:eslint && npm run format:prettier",
     "build": "rimraf dist && rollup -c rollup.config.js",
     "start:build": "npm run build && es-dev-server --root-dir dist --app-index index.html --open --compatibility none",
-    "start": "es-dev-server --app-index index.html --node-resolve --open --watch"
+    "start": "es-dev-server --app-index index.html --node-resolve --open --watch",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
+    "@open-wc/building-rollup": "^1.0.0",
     "@open-wc/eslint-config": "^2.0.0",
-    "prettier": "^2.0.4",
+    "es-dev-server": "^1.5.0",
+    "eslint": "^6.1.0",
     "husky": "^1.0.0",
     "lint-staged": "^8.0.0",
-    "@open-wc/building-rollup": "^1.0.0",
+    "prettier": "^2.0.4",
     "rimraf": "^2.6.3",
-    "rollup": "^2.3.4",
-    "es-dev-server": "^1.5.0"
+    "rollup": "^2.3.4"
   },
   "eslintConfig": {
     "extends": [
@@ -49,7 +50,8 @@
   "author": "drum-machine",
   "license": "MIT",
   "dependencies": {
-    "lit-html": "^1.0.0",
-    "lit-element": "^2.0.1"
+    "gh-pages": "^2.2.0",
+    "lit-element": "^2.0.1",
+    "lit-html": "^1.0.0"
   }
 }
