@@ -1,4 +1,5 @@
 import merge from 'deepmerge';
+import html from '@open-wc/rollup-plugin-html';
 // use createSpaConfig for bundling a Single Page App
 import { createSpaConfig } from '@open-wc/building-rollup';
 
@@ -9,7 +10,7 @@ const baseConfig = createSpaConfig({
   // use the outputdir option to modify where files are output
   outputDir: 'dist',
 
-  publicPath: 'https://diegosanchezp.github.io/drum-machine-fcc',
+  // publicPath: 'https://diegosanchezp.github.io/drum-machine-fcc',
   // if you need to support older browsers, such as IE11, set the legacyBuild
   // option to generate an additional build just for this browser
   // legacyBuild: true,
@@ -19,6 +20,9 @@ const baseConfig = createSpaConfig({
 
   // set to true to inject the service worker registration into your index.html
   injectServiceWorker: false,
+  html: {
+    publicPath: '/drum-machine-fcc/',
+  } 
 });
 
 export default merge(baseConfig, {
